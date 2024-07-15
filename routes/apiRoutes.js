@@ -7,32 +7,73 @@ api.get('/notes', (req, res) => {
     readFromFile('./db/db.json').then((data) => res.json(JSON.parse(data)));
 });
 
-// POST Route for submitting notes
-api.post('/', (req, res) => {
-  // Destructuring assignment for the items in req.body
-//   const { email, feedbackType, feedback } = req.body;
+// POST Route for submitting new notes
+api.post('/notes', (req, res) => {
+    let idNote = uuidv4();
+    // Destructuring assignment for the items in req.body
+    const { title, text } = req.body;
 
-//   // If all the required properties are present
-//   if (email && feedbackType && feedback) {
-//     // Variable for the object we will save
-//     const newFeedback = {
-//       email,
-//       feedbackType,
-//       feedback,
-//       feedback_id: uuidv4(),
-//     };
+    // Check if all the required properties are present
+    if (idNote && title && text) {
+        const newNote = {
+        id: idNote,
+        title,
+        text
+        };
 
-//     readAndAppend(newFeedback, './db/feedback.json');
+        // Read note from JSON file and append new note
+        readAndAppend(newNote, './db/db.json');
 
-//     const response = {
-//       status: 'success',
-//       body: newFeedback,
-//     };
+        // Create successful response
+        const response = {
+            status: 'success',
+            body: newNote,
+        };
 
-//     res.json(response);
-//   } else {
-//     res.json('Error in posting feedback');
-//   }
+        // return response
+        res.json(response);
+    }
+    else {
+        // An error occurred
+        res.json('Error in posting new Note.');
+    }
 });
+
+// DELETE Route for a specific note
+api.delete('/notes', (req, res) => {
+    console.log ('delete')
+    const noteId = req.params.id;
+    console.log (noteId)
+    readFromFile('./db/db.json')
+    .then((data) => JSON.parse(data))
+    .then((json) => {
+        // Make a new array of all notes except the one with the ID provided in the URL
+        const result = json.filter((note) => note.id !== noteId);
+
+        // Save that array to the filesystem
+        writeToFile('./db/db.json', result);
+
+        // Respond to the DELETE request
+        res.json(`Note ${noteId} has been deleted 🗑️`);
+    });
+  });
+
+  // DELETE Route for a specific tip
+// tips.delete('/:tip_id', (req, res) => {
+//     const tipId = req.params.tip_id;
+//     readFromFile('./db/tips.json')
+//       .then((data) => JSON.parse(data))
+//       .then((json) => {
+//         // Make a new array of all tips except the one with the ID provided in the URL
+//         const result = json.filter((tip) => tip.tip_id !== tipId);
+  
+//         // Save that array to the filesystem
+//         writeToFile('./db/tips.json', result);
+  
+//         // Respond to the DELETE request
+//         res.json(`Item ${tipId} has been deleted 🗑️`);
+//       });
+//   });
+
 
 module.exports = api;

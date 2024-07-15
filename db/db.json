@@ -1,7 +1,17 @@
 [
     {
-        "id": 514789,
-        "title":"Test Title",
-        "text":"Test text"
+        "id": "29dc44a2-28d6-41b8-b622-a7e87a1a0d37",
+        "title": "Finish Module 11",
+        "text": "Module 11 uses ExpressJS to read and write data to a JSON file."
+    },
+    {
+        "id": "fd106da0-50cd-4afd-bdf5-da1139fe5090",
+        "title": "Go Golfing",
+        "text": "Meet at 4pm at Sunbrook Golf Course."
+    },
+    {
+        "id": "af792803-683c-4a11-841d-429b116cf909",
+        "title": "Walk Dog",
+        "text": "Take Nala for a walk in the neighborhood."
     }
 ]

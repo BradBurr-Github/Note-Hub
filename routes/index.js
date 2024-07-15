@@ -1,3 +1,4 @@
+// Include Router to route to individual files
 const router = require('express').Router();
 
 // Import our modular routers for /api and /html
