@@ -1,6 +1,5 @@
 // Added required modules
 const express = require('express');
-const path = require('path');
 const api = require('./routes/apiRoutes.js');
 const html = require('./routes/htmlRoutes.js');
 
