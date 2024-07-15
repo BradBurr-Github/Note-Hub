@@ -1,19 +1,16 @@
 // Include required modules
+
 const html = require('express').Router();
+const path = require('path');
 
 // GET Route for notes page
-html.get('/notes', (req, res) => {
-  console.log('NOTES route');
-  //res.sendFile(path.join(__dirname, './public/notes.html'))
-  }
-  
+html.get('/notes', (req, res) =>
+  res.sendFile(path.join(__dirname, '../public/notes.html'))
 );
 
 // Wildcard "Catch-All" route to direct users to our Index page
-html.get('*', (req, res) => {
-  console.log('CATCH ALL route')
-  //res.sendFile(path.join(__dirname, './public/index.html'))
-}
+html.get('*', (req, res) => 
+  res.sendFile(path.join(__dirname, '../public/index.html'))
 );
 
 module.exports = html;
