@@ -1,13 +1,13 @@
 const api = require('express').Router();
-//const { v4: uuidv4 } = require('uuid');
-//const { readAndAppend, readFromFile } = require('../helpers/fsUtils');
+const { v4: uuidv4 } = require('uuid');
+const { readAndAppend, readFromFile } = require('../helpers/fsUtils');
 
-// GET Route for retrieving all the feedback
-api.get('/', (req, res) =>
-  readFromFile('./db/db.json').then((data) => res.json(JSON.parse(data)))
-);
+// GET Route for retrieving all the notes
+api.get('/notes', (req, res) => {
+    readFromFile('./db/db.json').then((data) => res.json(JSON.parse(data)));
+});
 
-// POST Route for submitting feedback
+// POST Route for submitting notes
 api.post('/', (req, res) => {
   // Destructuring assignment for the items in req.body
 //   const { email, feedbackType, feedback } = req.body;
