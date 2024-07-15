@@ -16,25 +16,10 @@ app.use(express.urlencoded({ extended: true }));
 
 // Set up a middleware function that mounts the specified api and html routers
 app.use('/api', api);
-app.use('/html', html);
+app.use('/', html);
 
 // Set up a middleware function to serve static files
 app.use(express.static('public'));
-
-// GET Route for homepage
-app.get('/', (req, res) =>
-    res.sendFile(path.join(__dirname, '/public/index.html'))
-);
-
-// GET Route for notes page
-app.get('/notes', (req, res) =>
-    res.sendFile(path.join(__dirname, '/public/notes.html'))
-);
-
-// Wildcard "Catch-All" route to direct users to our Index page
-app.get('*', (req, res) =>
-    res.sendFile(path.join(__dirname, '/public/index.html'))
-);
 
 // Call for app to listen at our port
 app.listen(PORT, () =>

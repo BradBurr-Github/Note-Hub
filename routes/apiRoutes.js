@@ -1,6 +1,7 @@
+// Include required modules
 const api = require('express').Router();
 const { v4: uuidv4 } = require('uuid');
-const { readAndAppend, readFromFile } = require('../helpers/fsUtils');
+const { writeToFile, readAndAppend, readFromFile } = require('../helpers/fsUtils');
 
 // GET Route for retrieving all the notes
 api.get('/notes', (req, res) => {
@@ -40,10 +41,8 @@ api.post('/notes', (req, res) => {
 });
 
 // DELETE Route for a specific note
-api.delete('/notes:id', (req, res) => {
-    console.log ('delete')
+api.delete('/notes/:id', (req, res) => {
     const noteId = req.params.id;
-    console.log (noteId)
     readFromFile('./db/db.json')
     .then((data) => JSON.parse(data))
     .then((json) => {
