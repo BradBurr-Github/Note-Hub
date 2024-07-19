@@ -1,10 +1,10 @@
 # Note Hub
-
+Note Hub is an exciting application to manage all of your Notes.
 ## Description
-Note Hub is an application that allows a user to manage all of their Notes.  As new Notes are needed, they can be easily added to Note Hub to keep track of them.  If the user needs to delete a Note for any reason, Note Hub allows for that as well.
-<br>
+Note Hub allows a user to add, manage and delete all of their Notes.  As new Notes are needed, they can be easily added to Note Hub to keep track of them.  If the user needs to delete a Note for any reason, Note Hub allows for that as well.
+<br/>
 <img src="./public/assets/images/webpage.png" alt="Note Hub image"/>
-<br>
+<br/>
 Click <a href="https://note-hub-er36.onrender.com/" target="_blank">here</a> to run Note Hub.
 ## Table of Contents
 1. [Installation](#installation)
