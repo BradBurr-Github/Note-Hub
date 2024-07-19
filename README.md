@@ -1,7 +1,8 @@
-# Note Taker
+# Note Hub
 
 ## Description
-Note Taker is an app to take note.s
+Note Hub is an application that allows a user to manage all of their Notes.  As new Notes are needed, they can be easily added to Note Hub to keep track of them.  If the user needs to delete a Note for any reason, Note Hub allows for that as well.
+<img src="./public/assets/images/webpage.png" alt="Note Hub image"/>
 ## Table of Contents
 1. [Installation](#installation)
 2. [Usage](#usage)
@@ -15,13 +16,13 @@ Note Taker is an app to take note.s
 npm install
 <a id="usage"></a>
 ## Usage
-It's a COOL app and it is public.
+This application is public and the code can easily be cloned to be used by anyone.
 <a id="license"></a>
 ## License
 This project is not currently licensed.
 <a id="contributing"></a>
 ## Contributing
-email me.
+Please email me with any comments and suggestions about Note Hub.
 <a id="tests"></a>
 ## Tests
 npm run test
