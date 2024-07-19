@@ -5,7 +5,7 @@ Note Hub is an application that allows a user to manage all of their Notes.  As 
 <br>
 <img src="./public/assets/images/webpage.png" alt="Note Hub image"/>
 <br>
-Click <a href="https://github.com/BradBurr-Github" target="_blank">here</a> to run Git Hub
+Click <a href="https://note-hub-er36.onrender.com/" target="_blank">here</a> to run Note Hub.
 ## Table of Contents
 1. [Installation](#installation)
 2. [Usage](#usage)
