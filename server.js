@@ -1,6 +1,5 @@
 // Added required modules
 const express = require('express');
-const path = require('path');
 const api = require('./routes/apiRoutes.js');
 const html = require('./routes/htmlRoutes.js');
 
@@ -14,12 +13,12 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+// Set up a middleware function to serve static files
+app.use(express.static('public'));
+
 // Set up a middleware function that mounts the specified api and html routers
 app.use('/api', api);
 app.use('/', html);
-
-// Set up a middleware function to serve static files
-app.use(express.static('public'));
 
 // Call for app to listen at our port
 app.listen(PORT, () =>
